@@ -1,0 +1,78 @@
+TRABLHO EDU MAT.DISCRETA:
+
+#include <stdio.h>
+
+void triangulopascal(){
+    
+}
+
+void arranjo() {
+    int n, k, i, fat_n = 1, fat_nk = 1;
+    
+    printf("Digite n: ");
+    scanf("%d", &n);
+    printf("Digite k: ");
+    scanf("%d", &k);
+    
+    for(i = 1; i <= n; i++) fat_n *= i;
+    for(i = 1; i <= (n - k); i++) fat_nk *= i;
+    
+    printf("Resultado do Arranjo: %d\n", fat_n / fat_nk);
+}
+
+void permutacao() {
+    int n, i, fat = 1;
+    
+    printf("Digite n: ");
+    scanf("%d", &n);
+    
+    for(i = 1; i <= n; i++) {
+        fat *= i;
+    }
+    printf("Resultado: %d\n", fat);
+}
+
+void combinacao() {
+    int n, k, i, fat_n = 1, fat_k = 1, fat_nk = 1;
+    
+    printf("Digite n: ");
+    scanf("%d", &n);
+    printf("Digite k: ");
+    scanf("%d", &k);
+    
+    for(i = 1; i <= n; i++) fat_n *= i;
+    for(i = 1; i <= k; i++) fat_k *= i;
+    for(i = 1; i <= (n - k); i++) fat_nk *= i;
+    
+    printf("Resultado: %d\n", fat_n / (fat_k * fat_nk));
+}
+
+int main() {
+    int opcao;
+    
+    printf("Escolha uma opcao:\n");
+    printf("1- Triangulo de pascal\n");
+    printf("2- Arranjo\n");
+    printf("3- Permutação simples\n");
+    printf("4- Combinação\n");
+    scanf("%d", &opcao);
+    
+    switch(opcao){
+        case 1:
+            triangulopascal();
+            break;
+        case 2:
+            arranjo();
+            break;
+        case 3:
+            permutacao();
+            break;
+        case 4:
+            combinacao();
+            break;
+        default:
+            printf("Opcao invalida!\n");
+    }
+    
+    return 0;
+}
